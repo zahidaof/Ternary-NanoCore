@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
-| Date         : Fri Nov 28 03:22:18 2025
+| Date         : Fri Nov 28 23:12:44 2025
 | Host         : thePC running 64-bit major release  (build 9200)
 | Command      : report_utilization -file ROM_Weights_utilization_synth.rpt -pb ROM_Weights_utilization_synth.pb
 | Design       : ROM_Weights
@@ -70,8 +70,9 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +-------------------+------+-------+------------+-----------+-------+
 |     Site Type     | Used | Fixed | Prohibited | Available | Util% |
 +-------------------+------+-------+------------+-----------+-------+
-| Block RAM Tile    |  0.5 |     0 |          0 |        50 |  1.00 |
-|   RAMB36/FIFO*    |    0 |     0 |          0 |        50 |  0.00 |
+| Block RAM Tile    |  1.5 |     0 |          0 |        50 |  3.00 |
+|   RAMB36/FIFO*    |    1 |     0 |          0 |        50 |  2.00 |
+|     RAMB36E1 only |    1 |       |            |           |       |
 |   RAMB18          |    1 |     0 |          0 |       100 |  1.00 |
 |     RAMB18E1 only |    1 |       |            |           |       |
 +-------------------+------+-------+------------+-----------+-------+
@@ -153,6 +154,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
+| RAMB36E1 |    1 |        Block Memory |
 | RAMB18E1 |    1 |        Block Memory |
 +----------+------+---------------------+
 

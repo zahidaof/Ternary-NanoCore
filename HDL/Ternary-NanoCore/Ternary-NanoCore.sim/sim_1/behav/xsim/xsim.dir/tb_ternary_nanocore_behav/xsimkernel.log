@@ -1,7 +1,7 @@
-Running: xsim.dir/tb_ternary_nanocore_behav/xsimk.exe -simmode gui -wdb tb_ternary_nanocore_behav.wdb -simrunnum 0 -socket 64302
+Running: xsim.dir/tb_ternary_nanocore_behav/xsimk.exe -simmode gui -wdb tb_ternary_nanocore_behav.wdb -simrunnum 0 -socket 56274
 Design successfully loaded
-Design Loading Memory Usage: 11640 KB (Peak: 11640 KB)
-Design Loading CPU Usage: 15 ms
+Design Loading Memory Usage: 11628 KB (Peak: 11628 KB)
+Design Loading CPU Usage: 62 ms
 Simulation completed
-Simulation Memory Usage: 14432 KB (Peak: 14432 KB)
-Simulation CPU Usage: 46 ms
+Simulation Memory Usage: 14380 KB (Peak: 14380 KB)
+Simulation CPU Usage: 92 ms

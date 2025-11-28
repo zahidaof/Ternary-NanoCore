@@ -32,7 +32,7 @@ module tmu_core(
         
         input wire [9:0] weights_packet, 
         
-        output reg signed [15:0] partial_sum_out
+        input reg signed [15:0] partial_sum_out
     );
     
         wire signed [7:0] neg_0 = (~pixel_0) + 1'b1;

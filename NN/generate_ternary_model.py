@@ -98,41 +98,74 @@ print(f"Weights Shape: {w_final.shape}")
 print(f"Unique values in weights: {np.unique(w_final)}") 
 # Verify it only contains -1, 0, 1
 
-# --- STEP 4: PACKING FOR FPGA ---
-print("Packing Weights for FPGA (Base-3)...")
+# ==========================================
+# MODIFIED STEP 4: WIDE PACKING (PARALLEL)
+# ==========================================
+print("Packing Weights into Single Wide Memory (80-bit width)...")
 
-def pack_weights_to_coe(weights_matrix, filename):
-    # Transpose so we read all 784 weights for Neuron 0 first
-    weights_flat = weights_matrix.T.flatten() 
+def pack_wide_weights(weights_matrix, filename):
+    # weights_matrix shape: (784, 10)
+    rows, cols = weights_matrix.shape
     
-    packed_bytes = []
-    current_val = 0
-    count = 0
+    # 1. Pad rows to be a multiple of 5 (784 -> 785)
+    # This ensures the last chunk doesn't crash the loop
+    padding_needed = 5 - (rows % 5)
+    if padding_needed != 5:
+        # Pad with 0s (no effect on sum)
+        zeros = np.zeros((padding_needed, cols))
+        weights_matrix = np.vstack([weights_matrix, zeros])
     
-    # Mapping: -1->2, 0->0, 1->1
-    for w in weights_flat:
-        mapped_w = 0
-        if w == 1: mapped_w = 1
-        elif w == -1: mapped_w = 2 # Maps to binary 11 in decoder if configured
+    packed_hex_lines = []
+    
+    # 2. Iterate through input pixels in chunks of 5 (The "Address" lines)
+    for i in range(0, len(weights_matrix), 5):
         
-        current_val += mapped_w * (3**count)
-        count += 1
+        # Get the 5x10 chunk of weights
+        # Rows i to i+5, All Neurons
+        chunk = weights_matrix[i : i+5] 
         
-        if count == 5:
-            packed_bytes.append(current_val)
-            current_val = 0
-            count = 0
+        # This variable will hold the massive 80-bit integer for this address
+        combined_80bit_word = 0
+        
+        # 3. Iterate through Neurons 0 to 9
+        for neuron_idx in range(10):
             
-    if count > 0: packed_bytes.append(current_val)
-    
+            # Get the 5 weights for THIS neuron in THIS chunk
+            w_5 = chunk[:, neuron_idx]
+            
+            # --- Base-3 Compression (Same as before) ---
+            # Compressing 5 weights into one 8-bit integer
+            # Mapping: -1->2, 0->0, 1->1
+            val_8bit = 0
+            for k, w in enumerate(w_5):
+                mapped_w = 0
+                if w == 1: mapped_w = 1
+                elif w == -1: mapped_w = 2 # Binary 11
+                
+                val_8bit += mapped_w * (3**k)
+            
+            # --- The "Wide" Shift ---
+            # Neuron 0 goes to bits [7:0]   (Shift 0)
+            # Neuron 1 goes to bits [15:8]  (Shift 8)
+            # ...
+            # Neuron 9 goes to bits [79:72] (Shift 72)
+            combined_80bit_word |= (val_8bit << (neuron_idx * 8))
+            
+        # Format as 20 Hex characters (20 chars * 4 bits = 80 bits)
+        packed_hex_lines.append(f"{combined_80bit_word:020X}")
+
+    # 4. Write to COE file
     with open(filename, 'w') as f:
         f.write("memory_initialization_radix=16;\n")
         f.write("memory_initialization_vector=\n")
-        hex_data = [f"{b:02X}" for b in packed_bytes]
-        f.write(",\n".join(hex_data) + ";")
+        f.write(",\n".join(packed_hex_lines) + ";")
+    
     print(f"Saved {filename}")
+    print(f"Total Lines (Depth): {len(packed_hex_lines)}")
+    print(f"Data Width (Hex chars): 20 (80 bits)")
 
-pack_weights_to_coe(w_final, "weights_layer1.coe")
+# Run the packing
+pack_wide_weights(w_final, "weights_parallel_80bit.coe")
 
 # --- STEP 5: EXPORT INPUT IMAGE ---
 print(f"Exporting Test Image Index {TEST_IMG_IDX} (Label: {y_test[TEST_IMG_IDX]})...")

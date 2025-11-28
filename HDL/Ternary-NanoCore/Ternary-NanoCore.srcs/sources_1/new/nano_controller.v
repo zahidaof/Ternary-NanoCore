@@ -29,7 +29,7 @@ module nano_controller (
     output reg [10:0] addr_weights, 
     output reg [9:0]  addr_inputs,  
     
-    input wire signed [15:0] tmu_sum_out
+    input wire signed [31:0] tmu_sum_out [0:9]
 );
 
     parameter IDLE = 0, CALC = 1, NEXT_NEURON = 2, DONE = 3;

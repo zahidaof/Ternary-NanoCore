@@ -1,6 +1,6 @@
 
 { 
-    crc :  2122480260863121639  , 
+    crc :  8844323307635180882  , 
     ccp_crc :  0  , 
     cmdline : " --incr --debug typical --relax --mt 2 -L xil_defaultlib -L blk_mem_gen_v8_4_11 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot tb_ternary_nanocore_behav xil_defaultlib.tb_ternary_nanocore xil_defaultlib.glbl" , 
     buildDate : "May 22 2025" , 

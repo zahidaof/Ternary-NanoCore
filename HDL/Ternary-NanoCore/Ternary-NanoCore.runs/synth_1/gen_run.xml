@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="synth_1" LaunchPart="xc7a35tfgg484-2L" LaunchTime="1764289377" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/ternary_nanocore_top.dcp">
-  <File Type="PA-TCL" Name="ternary_nanocore_top.tcl"/>
   <File Type="REPORTS-TCL" Name="ternary_nanocore_top_reports.tcl"/>
-  <File Type="RDS-RDS" Name="ternary_nanocore_top.vds"/>
-  <File Type="RDS-PROPCONSTRS" Name="ternary_nanocore_top_drc_synth.rpt"/>
   <File Type="RDS-UTIL" Name="ternary_nanocore_top_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="ternary_nanocore_top_utilization_synth.pb"/>
+  <File Type="PA-TCL" Name="ternary_nanocore_top.tcl"/>
+  <File Type="RDS-RDS" Name="ternary_nanocore_top.vds"/>
   <File Type="RDS-DCP" Name="ternary_nanocore_top.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="ternary_nanocore_top_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="ternary_nanocore_top_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/ip/RAM_Input/RAM_Input.xci">
@@ -92,9 +89,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025"/>
     <Step Id="synth_design"/>
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="ROM_Weights"/>
