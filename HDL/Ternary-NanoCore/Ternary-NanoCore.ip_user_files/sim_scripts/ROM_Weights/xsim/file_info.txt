@@ -1,0 +1,2 @@
+ROM_Weights.v,verilog,xil_defaultlib,../../../../Ternary-NanoCore.gen/sources_1/ip/ROM_Weights/sim/ROM_Weights.v,incdir="../../../../../../../../../../../../../Xilinx/2025.1/Vivado/data/rsb/busdef"
+glbl.v,Verilog,xil_defaultlib,glbl.v
