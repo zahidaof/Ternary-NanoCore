@@ -5,23 +5,25 @@ Block Memory Generator module tb_ternary_nanocore.uut.weight_mem.inst.native_mem
  Block Memory Generator module loading initial data...
  Block Memory Generator data initialization complete.
 Block Memory Generator module tb_ternary_nanocore.uut.input_mem.inst.native_mem_module.blk_mem_gen_v8_4_11_inst is using a behavioral model for simulation which will not precisely model memory collision behavior.
-Starting Simulation...
+-----------------------------------------
 Starting Simulation...
 -----------------------------------------
 Pressing Start Button...
-Pressing Start Button...
-Debug: Neuron  0 | Score:       -1200
-Debug: Neuron  1 | Score:        1164
-Debug: Neuron  2 | Score:        -879
-Debug: Neuron  3 | Score:       -2613
-Debug: Neuron  4 | Score:       -1456
-Debug: Neuron  5 | Score:        3519
-Debug: Neuron  6 | Score:       -5208
-Debug: Neuron  7 | Score:        3343
-Debug: Neuron  8 | Score:         -54
-Debug: Neuron  9 | Score:        -477
+
+--- INTERNAL NEURON SCORES ---
+Neuron 0 Final Score:        -633
+Neuron 1 Final Score:       -6652
+Neuron 2 Final Score:        -721
+Neuron 3 Final Score:        1783
+Neuron 4 Final Score:       -1824
+Neuron 5 Final Score:         454
+Neuron 6 Final Score:       -5360
+Neuron 7 Final Score:        6325
+Neuron 8 Final Score:        -580
+Neuron 9 Final Score:         -28
+------------------------------
+
+Inference Completed.
+Final Prediction (LED Output):  7
 -----------------------------------------
-Inference Completed Successfully!
-Predicted Class (LED Output):  5
------------------------------------------
-$finish called at time : 16255 ns : File "C:/Users/zahid/Desktop/Projects/Ternary/Ternary-NanoCore/Ternary-NanoCore/HDL/Ternary-NanoCore/Ternary-NanoCore.srcs/sim_1/new/tb_ternary_nanocore.v" Line 88
+$finish called at time : 1865 ns : File "C:/Users/zahid/Desktop/Projects/Ternary/Ternary-NanoCore/Ternary-NanoCore/HDL/Ternary-NanoCore/Ternary-NanoCore.srcs/sim_1/new/tb_ternary_nanocore.v" Line 71

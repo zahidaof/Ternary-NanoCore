@@ -5,7 +5,6 @@ Running: C:/Xilinx/2025.1/Vivado/bin/unwrapped/win64.o/xelab.exe --incr --debug 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3091] actual bit length 8 differs from formal bit length 10 for port 'addr_inputs' [C:/Users/zahid/Desktop/Projects/Ternary/Ternary-NanoCore/Ternary-NanoCore/HDL/Ternary-NanoCore/Ternary-NanoCore.srcs/sources_1/new/ternary_nanocore_top.v:77]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis

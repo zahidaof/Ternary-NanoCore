@@ -32,9 +32,9 @@ module tmu_core(
         
         input wire [9:0] weights_packet, 
         
-        input reg signed [15:0] partial_sum_out
+        output reg signed [15:0] partial_sum_out
     );
-    
+        // Two's Complement
         wire signed [7:0] neg_0 = (~pixel_0) + 1'b1;
         wire signed [7:0] neg_1 = (~pixel_1) + 1'b1;
         wire signed [7:0] neg_2 = (~pixel_2) + 1'b1;

@@ -26,27 +26,19 @@ module ternary_nanocore_top(
     output wire [3:0] led_results
     );
     
-    wire [10:0] weight_addr;
-    wire [79:0]  weight_data; // 8-bit packed weights
+    wire [7:0] weight_addr;
+    wire [79:0]  weight_data; // 80-bit packed weights
     
     wire [7:0]  input_addr;  
     wire [39:0] input_data;  // 40-bit packed pixels
     
     wire [9:0] unpacked_weights [0:9];
     wire [15:0] tmu_result [0:9];
-    reg  signed [31:0] accumulator [0:9];
     
-    ROM_Weights weight_mem (
-        .clka(clk),
-        .addra(weight_addr),
-        .douta(weight_data) 
-    );
+    ROM_Weights weight_mem (.clka(clk),.addra(weight_addr),.douta(weight_data) );
     
-    RAM_Input input_mem (
-        .clka(clk),
-        .addra(input_addr), 
-        .douta(input_data)  
-    );
+    RAM_Input input_mem (.clka(clk),.addra(input_addr), .douta(input_data) );
+    
     ternary_decoder decoder0(.encoded_data(weight_data[7:0]),.unpacked_weights(unpacked_weights[0]));
     ternary_decoder decoder1(.encoded_data(weight_data[15:8]),.unpacked_weights(unpacked_weights[1]));
     ternary_decoder decoder2(.encoded_data(weight_data[23:16]),.unpacked_weights(unpacked_weights[2]));
@@ -72,7 +64,11 @@ module ternary_nanocore_top(
     
     
     
-    
+    wire [159:0] tmu_sum_out_flat;
+    assign tmu_sum_out_flat = { 
+        tmu_result[9], tmu_result[8], tmu_result[7], tmu_result[6], tmu_result[5],
+        tmu_result[4], tmu_result[3], tmu_result[2], tmu_result[1], tmu_result[0] 
+    };
     wire start = start_btn;
     assign done_led = done_sig;
     
@@ -85,7 +81,7 @@ module ternary_nanocore_top(
         
         .addr_weights(weight_addr),
         .addr_inputs(input_addr),
-        .tmu_sum_out(accumulator)
+        .tmu_sum_out_flat(tmu_sum_out_flat)
     );
 
    
