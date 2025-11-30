@@ -62,12 +62,4 @@ Final Prediction (LED Output): **7**
    - Run behavioral simulation in Vivado to test with the generated image.
    - When verified, run synthesis, implementation, and generate the bitstream for Artix-7.
 
-## Tips for tables that currently look like text
-- Make sure there is a blank line above the table in Markdown.
-- Use the header separator row (e.g., `|---|---|`) right after the header row.
-- Preview the README on GitHub (or in VS Code Markdown preview) to check rendering.
-- If your table cells need backticks or pipes, wrap code inside fenced code blocks or use HTML <table> for finer control.
 
-If you want, I can:
-- Replace your project's README.md in the repo with this version (I can open a PR).
-- Or, take your current specific table text and convert it into a Markdown table exactly as you want — paste the table text here and I'll format it.
