@@ -43,7 +43,6 @@ Neuron 6 Final Score: -5360
 Neuron 7 Final Score: 6325
 Neuron 8 Final Score: -580
 Neuron 9 Final Score: -28
------------------------------
 Inference Completed.
 Final Prediction (LED Output): 7
 
