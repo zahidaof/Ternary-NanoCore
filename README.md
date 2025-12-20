@@ -41,7 +41,14 @@ In testing, the hardware correctly identified the digit from a 28x28 input image
 | 8      | -580        |
 | 9      | -28         |
 
+Here a physical test with 1 as an input image 
+the LED shows LSB as 1 correctly 
+
 Final Prediction (LED Output): **7**
+
+
+![20251220_165950](https://github.com/user-attachments/assets/92063df9-39ba-43e8-aef0-6bfd7a58779c)
+
 
 ## How to Use
 
