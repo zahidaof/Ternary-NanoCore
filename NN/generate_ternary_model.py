@@ -2,7 +2,6 @@ import tensorflow as tf
 import numpy as np
 from PIL import Image
 import os
-
 # ==========================================
 # CUSTOM TERNARY LAYER (The Magic)
 # ==========================================
@@ -72,7 +71,6 @@ x_test_flat  = x_test.reshape((-1, 784)).astype(np.float32)
 # --- STEP 2: BUILD TERNARY MODEL ---
 print("Building QAT (Quantization Aware) Ternary Model...")
 
-# We use our custom layer instead of the standard Dense layer
 model = tf.keras.models.Sequential([
     tf.keras.layers.InputLayer(input_shape=(784,)),
     TernaryDense(units=10, input_dim=784, activation='softmax')
@@ -82,9 +80,45 @@ model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=0.005),
               loss='sparse_categorical_crossentropy',
               metrics=['accuracy'])
 
+# ==========================================
+# ### NEW CODE: OPTION 1 - STATIC IMAGE ###
+# ==========================================
+# This saves a PNG file of your architecture tree.
+# Note: Requires 'pip install pydot' and Graphviz installed on your OS.
+try:
+    tf.keras.utils.plot_model(
+        model,
+        to_file='ternary_model_viz.png',
+        show_shapes=True,
+        show_layer_names=True,
+        expand_nested=True
+    )
+    print("Saved model architecture to 'ternary_model_viz.png'")
+except Exception as e:
+    print(f"Could not plot model (likely missing Graphviz): {e}")
+
+# ==========================================
+# ### NEW CODE: OPTION 2 - TENSORBOARD ###
+# ==========================================
+import datetime
+# Create a log folder for this specific run
+log_dir = "logs/ternary_fit/" + datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+
+tensorboard_callback = tf.keras.callbacks.TensorBoard(
+    log_dir=log_dir, 
+    histogram_freq=1,   # Visualizes weight histograms (CRUCIAL for your quantization check)
+    write_graph=True    # Visualizes the graph
+)
+
 print("Training with Shadow Weights...")
-# We train for more epochs because Ternary optimization is harder
-model.fit(x_train_flat, y_train, epochs=10, batch_size=64)
+# Add the callback to your fit function
+model.fit(
+    x_train_flat, 
+    y_train, 
+    epochs=10, 
+    batch_size=64,
+    callbacks=[tensorboard_callback] # <--- Added here
+)
 
 # --- STEP 3: EXTRACT & EXPORT WEIGHTS ---
 print("\nExtracting Final Ternary Weights...")
@@ -220,3 +254,31 @@ with open("ternary_decoder.v", "w") as f:
         f.write(f"            8'd{i}: unpacked_weights = 10'b{binary_string};\n")
     f.write("            default: unpacked_weights = 10'b0000000000;\n        endcase\n    end\nendmodule\n")
 print("Done.")
+
+
+import matplotlib.pyplot as plt
+
+# 1. Get the quantized weights from your custom layer
+#    (layer[0] is Input, layer[1] is TernaryDense)
+ternary_layer = model.layers[0] 
+weights = ternary_layer.get_quantized_weights() # Shape: (784, 10)
+
+# 2. Setup the plot
+fig, axes = plt.subplots(2, 5, figsize=(12, 5))
+fig.suptitle('Ternary Weights Visualization (-1=Black, 0=Gray, 1=White)')
+
+for i, ax in enumerate(axes.flat):
+    # Extract weights for the i-th digit (e.g., "0", "1", etc.)
+    neuron_weights = weights[:, i] 
+    
+    # Reshape flattened 784 -> 28x28 image
+    img = neuron_weights.reshape(28, 28)
+    
+    # Plot it
+    im = ax.imshow(img, cmap='gray', vmin=-1, vmax=1)
+    ax.set_title(f"Digit {i}")
+    ax.axis('off')
+
+# Add a colorbar to show what the colors mean
+fig.colorbar(im, ax=axes.ravel().tolist(), label='Weight Value')
+plt.show()

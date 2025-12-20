@@ -1,0 +1,27 @@
+#-----------------------------------------------------------
+# Vivado v2025.1 (64-bit)
+# SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
+# IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
+# SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
+# Start of session at: Sat Dec 20 15:44:44 2025
+# Process ID         : 19108
+# Current directory  : C:/Users/zahid/Desktop/Projects/Ternary/Ternary-NanoCore/Ternary-NanoCore/HDL/Ternary-NanoCore/Ternary-NanoCore.runs/RAM_Input_synth_1
+# Command line       : vivado.exe -log RAM_Input.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source RAM_Input.tcl
+# Log file           : C:/Users/zahid/Desktop/Projects/Ternary/Ternary-NanoCore/Ternary-NanoCore/HDL/Ternary-NanoCore/Ternary-NanoCore.runs/RAM_Input_synth_1/RAM_Input.vds
+# Journal file       : C:/Users/zahid/Desktop/Projects/Ternary/Ternary-NanoCore/Ternary-NanoCore/HDL/Ternary-NanoCore/Ternary-NanoCore.runs/RAM_Input_synth_1\vivado.jou
+# Running On         : thePC
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : 12th Gen Intel(R) Core(TM) i5-12600KF
+# CPU Frequency      : 3686 MHz
+# CPU Physical cores : 10
+# CPU Logical cores  : 16
+# Host memory        : 34198 MB
+# Swap memory        : 2147 MB
+# Total Virtual      : 36345 MB
+# Available Virtual  : 24249 MB
+#-----------------------------------------------------------
+source RAM_Input.tcl -notrace
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 498.977 ; gain = 210.523
+INFO: [IP_Flow 19-4838] Using cached IP synthesis design for IP RAM_Input, cache-ID = 2d8f558d4c0f2280.
+INFO: [Common 17-206] Exiting Vivado at Sat Dec 20 15:44:55 2025...

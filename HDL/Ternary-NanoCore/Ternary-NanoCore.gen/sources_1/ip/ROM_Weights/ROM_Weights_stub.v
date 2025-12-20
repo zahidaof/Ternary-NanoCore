@@ -2,10 +2,10 @@
 // Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
-// Date        : Sun Nov 30 21:28:06 2025
+// Date        : Sat Dec 20 15:45:47 2025
 // Host        : thePC running 64-bit major release  (build 9200)
-// Command     : write_verilog -force -mode synth_stub -rename_top ROM_Weights -prefix
-//               ROM_Weights_ ROM_Weights_stub.v
+// Command     : write_verilog -force -mode synth_stub
+//               c:/Users/zahid/Desktop/Projects/Ternary/Ternary-NanoCore/Ternary-NanoCore/HDL/Ternary-NanoCore/Ternary-NanoCore.gen/sources_1/ip/ROM_Weights/ROM_Weights_stub.v
 // Design      : ROM_Weights
 // Purpose     : Stub declaration of top-level module interface
 // Device      : xc7a35tfgg484-2L

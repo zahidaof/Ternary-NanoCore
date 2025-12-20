@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
-| Date         : Sun Nov 30 22:15:55 2025
+| Date         : Sat Dec 20 16:31:34 2025
 | Host         : thePC running 64-bit major release  (build 9200)
 | Command      : report_utilization -file ternary_nanocore_top_utilization_synth.rpt -pb ternary_nanocore_top_utilization_synth.pb
 | Design       : ternary_nanocore_top
@@ -93,7 +93,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +-----------------------------+------+-------+------------+-----------+-------+
 |          Site Type          | Used | Fixed | Prohibited | Available | Util% |
 +-----------------------------+------+-------+------------+-----------+-------+
-| Bonded IOB                  |    8 |     0 |          0 |       250 |  3.20 |
+| Bonded IOB                  |    9 |     0 |          0 |       250 |  3.60 |
 | Bonded IPADs                |    0 |     0 |          0 |        14 |  0.00 |
 | Bonded OPADs                |    0 |     0 |          0 |         8 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |          0 |         5 |  0.00 |
@@ -101,7 +101,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | OUT_FIFO                    |    0 |     0 |          0 |        20 |  0.00 |
 | IN_FIFO                     |    0 |     0 |          0 |        20 |  0.00 |
 | IDELAYCTRL                  |    0 |     0 |          0 |         5 |  0.00 |
-| IBUFDS                      |    0 |     0 |          0 |       240 |  0.00 |
+| IBUFDS                      |    1 |     0 |          0 |       240 |  0.42 |
 | GTPE2_CHANNEL               |    0 |     0 |          0 |         4 |  0.00 |
 | PHASER_OUT/PHASER_OUT_PHY   |    0 |     0 |          0 |        20 |  0.00 |
 | PHASER_IN/PHASER_IN_PHY     |    0 |     0 |          0 |        20 |  0.00 |
@@ -165,7 +165,8 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | FDSE     |   19 |        Flop & Latch |
 | LUT1     |   16 |                 LUT |
 | OBUF     |    5 |                  IO |
-| IBUF     |    3 |                  IO |
+| IBUF     |    2 |                  IO |
+| IBUFDS   |    1 |                  IO |
 | BUFG     |    1 |               Clock |
 +----------+------+---------------------+
 

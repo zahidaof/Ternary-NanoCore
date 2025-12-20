@@ -3,7 +3,8 @@
 module tb_ternary_nanocore;
 
     
-    reg clk;
+    reg clk_p;
+    reg clk_n;
     reg rst_n;
     reg start_btn;
 
@@ -13,7 +14,8 @@ module tb_ternary_nanocore;
 
     
     ternary_nanocore_top uut (
-        .clk(clk), 
+        .clk_p(clk_p), 
+        .clk_n(clk_n), 
         .rst_n(rst_n), 
         .start_btn(start_btn), 
         .done_led(done_led), 
@@ -22,9 +24,14 @@ module tb_ternary_nanocore;
     
   
     initial begin
-        clk = 0;
-        forever #5 clk = ~clk;
+        clk_p = 0;
+        clk_n = 1;
     end
+        always #2.5 begin
+            clk_p = ~clk_p;
+            clk_n = ~clk_n;
+    end
+
 
    
     integer i;

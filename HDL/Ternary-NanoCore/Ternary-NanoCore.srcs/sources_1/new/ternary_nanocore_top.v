@@ -21,11 +21,11 @@
 
 
 module ternary_nanocore_top(
-    input wire clk,rst_n,start_btn,
+    input wire clk_p,clk_n,rst_n,start_btn,
     output wire done_led,
     output wire [3:0] led_results
     );
-    
+    wire clk;
     wire [7:0] weight_addr;
     wire [79:0]  weight_data; // 80-bit packed weights
     
@@ -35,6 +35,16 @@ module ternary_nanocore_top(
     wire [9:0] unpacked_weights [0:9];
     wire [15:0] tmu_result [0:9];
     
+       IBUFDS #(
+      .DIFF_TERM("FALSE"),       // Differential Termination
+      .IBUF_LOW_PWR("TRUE"),     // Low power="TRUE", Highest performance="FALSE" 
+      .IOSTANDARD("DEFAULT")     // Specify the input I/O standard
+   ) IBUFDS_inst (
+      .O(clk),  // Buffer output
+      .I(clk_p),  // Diff_p buffer input (connect directly to top-level port)
+      .IB(clk_n) // Diff_n buffer input (connect directly to top-level port)
+   );
+
     ROM_Weights weight_mem (.clka(clk),.addra(weight_addr),.douta(weight_data) );
     
     RAM_Input input_mem (.clka(clk),.addra(input_addr), .douta(input_data) );

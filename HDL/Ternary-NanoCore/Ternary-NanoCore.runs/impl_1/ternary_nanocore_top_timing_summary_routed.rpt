@@ -1,0 +1,818 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
+| Date         : Sat Dec 20 16:48:05 2025
+| Host         : thePC running 64-bit major release  (build 9200)
+| Command      : report_timing_summary -max_paths 10 -routable_nets -report_unconstrained -file ternary_nanocore_top_timing_summary_routed.rpt -pb ternary_nanocore_top_timing_summary_routed.pb -rpx ternary_nanocore_top_timing_summary_routed.rpx -warn_on_violation
+| Design       : ternary_nanocore_top
+| Device       : 7a35t-fgg484
+| Speed File   : -2L  PRODUCTION 1.23 2018-06-13
+| Design State : Routed
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Timing Summary Report
+
+------------------------------------------------------------------------------------------------
+| Timer Settings
+| --------------
+------------------------------------------------------------------------------------------------
+
+  Enable Multi Corner Analysis               :  Yes
+  Enable Pessimism Removal                   :  Yes
+  Pessimism Removal Resolution               :  Nearest Common Node
+  Enable Input Delay Default Clock           :  No
+  Enable Preset / Clear Arcs                 :  No
+  Disable Flight Delays                      :  No
+  Ignore I/O Paths                           :  No
+  Timing Early Launch at Borrowing Latches   :  No
+  Borrow Time for Max Delay Exceptions       :  Yes
+  Merge Timing Exceptions                    :  Yes
+  Inter-SLR Compensation                     :  Conservative
+
+  Corner  Analyze    Analyze    
+  Name    Max Paths  Min Paths  
+  ------  ---------  ---------  
+  Slow    Yes        Yes        
+  Fast    Yes        Yes        
+
+
+------------------------------------------------------------------------------------------------
+| Report Methodology
+| ------------------
+------------------------------------------------------------------------------------------------
+
+Rule       Severity          Description                  Violations  
+---------  ----------------  ---------------------------  ----------  
+TIMING-17  Critical Warning  Non-clocked sequential cell  506         
+
+Note: This report is based on the most recent report_methodology run and may not be up-to-date. Run report_methodology on the current design for the latest report.
+
+
+
+check_timing report
+
+Table of Contents
+-----------------
+1. checking no_clock (506)
+2. checking constant_clock (0)
+3. checking pulse_width_clock (0)
+4. checking unconstrained_internal_endpoints (1328)
+5. checking no_input_delay (2)
+6. checking no_output_delay (5)
+7. checking multiple_clock (0)
+8. checking generated_clocks (0)
+9. checking loops (0)
+10. checking partial_input_delay (0)
+11. checking partial_output_delay (0)
+12. checking latch_loops (0)
+
+1. checking no_clock (506)
+--------------------------
+ There are 506 register/latch pins with no clock driven by root clock pin: clk_p (HIGH)
+
+
+2. checking constant_clock (0)
+------------------------------
+ There are 0 register/latch pins with constant_clock.
+
+
+3. checking pulse_width_clock (0)
+---------------------------------
+ There are 0 register/latch pins which need pulse_width check
+
+
+4. checking unconstrained_internal_endpoints (1328)
+---------------------------------------------------
+ There are 1328 pins that are not constrained for maximum delay. (HIGH)
+
+ There are 0 pins that are not constrained for maximum delay due to constant clock.
+
+
+5. checking no_input_delay (2)
+------------------------------
+ There are 2 input ports with no input delay specified. (HIGH)
+
+ There are 0 input ports with no input delay but user has a false path constraint.
+
+
+6. checking no_output_delay (5)
+-------------------------------
+ There are 5 ports with no output delay specified. (HIGH)
+
+ There are 0 ports with no output delay but user has a false path constraint
+
+ There are 0 ports with no output delay but with a timing clock defined on it or propagating through it
+
+
+7. checking multiple_clock (0)
+------------------------------
+ There are 0 register/latch pins with multiple clocks.
+
+
+8. checking generated_clocks (0)
+--------------------------------
+ There are 0 generated clocks that are not connected to a clock source.
+
+
+9. checking loops (0)
+---------------------
+ There are 0 combinational loops in the design.
+
+
+10. checking partial_input_delay (0)
+------------------------------------
+ There are 0 input ports with partial input delay specified.
+
+
+11. checking partial_output_delay (0)
+-------------------------------------
+ There are 0 ports with partial output delay specified.
+
+
+12. checking latch_loops (0)
+----------------------------
+ There are 0 combinational latch loops in the design through latch input
+
+
+
+------------------------------------------------------------------------------------------------
+| Design Timing Summary
+| ---------------------
+------------------------------------------------------------------------------------------------
+
+    WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+    -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+        inf        0.000                      0                 1333          inf        0.000                      0                 1333           NA           NA                      NA                    NA  
+
+
+There are no user specified timing constraints.
+
+
+------------------------------------------------------------------------------------------------
+| Clock Summary
+| -------------
+------------------------------------------------------------------------------------------------
+
+
+------------------------------------------------------------------------------------------------
+| Intra Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+Clock             WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints     WPWS(ns)     TPWS(ns)  TPWS Failing Endpoints  TPWS Total Endpoints  
+-----             -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------     --------     --------  ----------------------  --------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Inter Clock Table
+| -----------------
+------------------------------------------------------------------------------------------------
+
+From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| Other Path Groups Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock          WNS(ns)      TNS(ns)  TNS Failing Endpoints  TNS Total Endpoints      WHS(ns)      THS(ns)  THS Failing Endpoints  THS Total Endpoints  
+----------    ----------    --------          -------      -------  ---------------------  -------------------      -------      -------  ---------------------  -------------------  
+
+
+------------------------------------------------------------------------------------------------
+| User Ignored Path Table
+| -----------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock    
+----------    ----------    --------    
+
+
+------------------------------------------------------------------------------------------------
+| Unconstrained Path Table
+| ------------------------
+------------------------------------------------------------------------------------------------
+
+Path Group    From Clock    To Clock    
+----------    ----------    --------    
+(none)                                    
+
+
+------------------------------------------------------------------------------------------------
+| Timing Details
+| --------------
+------------------------------------------------------------------------------------------------
+
+
+--------------------------------------------------------------------------------------
+Path Group:  (none)
+From Clock:  
+  To Clock:  
+
+Max Delay          1333 Endpoints
+Min Delay          1333 Endpoints
+--------------------------------------------------------------------------------------
+
+
+Max Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 <hidden>
+                            (rising edge-triggered cell RAMB36E1)
+  Destination:            core8/partial_sum_out_reg[9]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        10.351ns  (logic 2.475ns (23.910%)  route 7.876ns (76.090%))
+  Logic Levels:           10  (CARRY4=3 LUT3=1 LUT4=3 LUT6=2 RAMB36E1=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    RAMB36_X0Y2          RAMB36E1                     0.000     0.000 r  <hidden>
+    RAMB36_X0Y2          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_DOBDO[19])
+                                                      0.734     0.734 r  <hidden>
+                         net (fo=33, routed)          2.925     3.659    core9/douta[25]
+    SLICE_X30Y8          LUT6 (Prop_lut6_I3_O)        0.105     3.764 f  core9/partial_sum_out[15]_i_55/O
+                         net (fo=10, routed)          2.024     5.788    decoder8/partial_sum_out[15]_i_12__7_1
+    SLICE_X6Y7           LUT4 (Prop_lut4_I3_O)        0.105     5.893 r  decoder8/partial_sum_out[15]_i_25__6/O
+                         net (fo=2, routed)           0.684     6.577    decoder8/partial_sum_out[15]_i_25__6_n_0
+    SLICE_X6Y6           LUT6 (Prop_lut6_I1_O)        0.105     6.682 r  decoder8/partial_sum_out[15]_i_12__7/O
+                         net (fo=2, routed)           0.715     7.397    decoder8/partial_sum_out[15]_i_12__7_n_0
+    SLICE_X7Y6           LUT4 (Prop_lut4_I0_O)        0.105     7.502 r  decoder8/partial_sum_out[15]_i_16__7/O
+                         net (fo=1, routed)           0.000     7.502    decoder8/partial_sum_out[15]_i_16__7_n_0
+    SLICE_X7Y6           CARRY4 (Prop_carry4_S[2]_O[2])
+                                                      0.207     7.709 r  decoder8/partial_sum_out_reg[15]_i_6__7/O[2]
+                         net (fo=2, routed)           0.947     8.656    decoder8/partial_sum_out_reg[15]_i_6__7_n_5
+    SLICE_X2Y10          LUT3 (Prop_lut3_I0_O)        0.275     8.931 r  decoder8/partial_sum_out[7]_i_2__7/O
+                         net (fo=2, routed)           0.581     9.512    decoder8/partial_sum_out[7]_i_2__7_n_0
+    SLICE_X2Y10          LUT4 (Prop_lut4_I0_O)        0.268     9.780 r  decoder8/partial_sum_out[7]_i_6__7/O
+                         net (fo=1, routed)           0.000     9.780    decoder8/partial_sum_out[7]_i_6__7_n_0
+    SLICE_X2Y10          CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.314    10.094 r  decoder8/partial_sum_out_reg[7]_i_1__7/CO[3]
+                         net (fo=1, routed)           0.000    10.094    decoder8/partial_sum_out_reg[7]_i_1__7_n_0
+    SLICE_X2Y11          CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.257    10.351 r  decoder8/partial_sum_out_reg[15]_i_1__7/O[1]
+                         net (fo=1, routed)           0.000    10.351    core8/D[9]
+    SLICE_X2Y11          FDRE                                         r  core8/partial_sum_out_reg[9]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 <hidden>
+                            (rising edge-triggered cell RAMB36E1)
+  Destination:            core8/partial_sum_out_reg[15]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        10.293ns  (logic 2.417ns (23.482%)  route 7.876ns (76.519%))
+  Logic Levels:           10  (CARRY4=3 LUT3=1 LUT4=3 LUT6=2 RAMB36E1=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    RAMB36_X0Y2          RAMB36E1                     0.000     0.000 r  <hidden>
+    RAMB36_X0Y2          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_DOBDO[19])
+                                                      0.734     0.734 r  <hidden>
+                         net (fo=33, routed)          2.925     3.659    core9/douta[25]
+    SLICE_X30Y8          LUT6 (Prop_lut6_I3_O)        0.105     3.764 f  core9/partial_sum_out[15]_i_55/O
+                         net (fo=10, routed)          2.024     5.788    decoder8/partial_sum_out[15]_i_12__7_1
+    SLICE_X6Y7           LUT4 (Prop_lut4_I3_O)        0.105     5.893 r  decoder8/partial_sum_out[15]_i_25__6/O
+                         net (fo=2, routed)           0.684     6.577    decoder8/partial_sum_out[15]_i_25__6_n_0
+    SLICE_X6Y6           LUT6 (Prop_lut6_I1_O)        0.105     6.682 r  decoder8/partial_sum_out[15]_i_12__7/O
+                         net (fo=2, routed)           0.715     7.397    decoder8/partial_sum_out[15]_i_12__7_n_0
+    SLICE_X7Y6           LUT4 (Prop_lut4_I0_O)        0.105     7.502 r  decoder8/partial_sum_out[15]_i_16__7/O
+                         net (fo=1, routed)           0.000     7.502    decoder8/partial_sum_out[15]_i_16__7_n_0
+    SLICE_X7Y6           CARRY4 (Prop_carry4_S[2]_O[2])
+                                                      0.207     7.709 r  decoder8/partial_sum_out_reg[15]_i_6__7/O[2]
+                         net (fo=2, routed)           0.947     8.656    decoder8/partial_sum_out_reg[15]_i_6__7_n_5
+    SLICE_X2Y10          LUT3 (Prop_lut3_I0_O)        0.275     8.931 r  decoder8/partial_sum_out[7]_i_2__7/O
+                         net (fo=2, routed)           0.581     9.512    decoder8/partial_sum_out[7]_i_2__7_n_0
+    SLICE_X2Y10          LUT4 (Prop_lut4_I0_O)        0.268     9.780 r  decoder8/partial_sum_out[7]_i_6__7/O
+                         net (fo=1, routed)           0.000     9.780    decoder8/partial_sum_out[7]_i_6__7_n_0
+    SLICE_X2Y10          CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.314    10.094 r  decoder8/partial_sum_out_reg[7]_i_1__7/CO[3]
+                         net (fo=1, routed)           0.000    10.094    decoder8/partial_sum_out_reg[7]_i_1__7_n_0
+    SLICE_X2Y11          CARRY4 (Prop_carry4_CI_O[2])
+                                                      0.199    10.293 r  decoder8/partial_sum_out_reg[15]_i_1__7/O[2]
+                         net (fo=1, routed)           0.000    10.293    core8/D[10]
+    SLICE_X2Y11          FDRE                                         r  core8/partial_sum_out_reg[15]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 <hidden>
+                            (rising edge-triggered cell RAMB36E1)
+  Destination:            core7/partial_sum_out_reg[9]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        10.278ns  (logic 2.495ns (24.275%)  route 7.783ns (75.725%))
+  Logic Levels:           10  (CARRY4=3 LUT3=1 LUT4=3 LUT6=2 RAMB36E1=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    RAMB36_X0Y2          RAMB36E1                     0.000     0.000 r  <hidden>
+    RAMB36_X0Y2          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_DOBDO[19])
+                                                      0.734     0.734 r  <hidden>
+                         net (fo=33, routed)          2.925     3.659    core9/douta[25]
+    SLICE_X30Y8          LUT6 (Prop_lut6_I3_O)        0.105     3.764 f  core9/partial_sum_out[15]_i_55/O
+                         net (fo=10, routed)          2.275     6.039    decoder7/partial_sum_out[15]_i_12__6_1
+    SLICE_X0Y7           LUT4 (Prop_lut4_I3_O)        0.105     6.144 r  decoder7/partial_sum_out[15]_i_25__5/O
+                         net (fo=2, routed)           0.528     6.672    decoder7/partial_sum_out[15]_i_25__5_n_0
+    SLICE_X3Y6           LUT6 (Prop_lut6_I1_O)        0.105     6.777 r  decoder7/partial_sum_out[15]_i_12__6/O
+                         net (fo=2, routed)           0.689     7.466    decoder7/partial_sum_out[15]_i_12__6_n_0
+    SLICE_X4Y6           LUT4 (Prop_lut4_I0_O)        0.105     7.571 r  decoder7/partial_sum_out[15]_i_16__6/O
+                         net (fo=1, routed)           0.000     7.571    decoder7/partial_sum_out[15]_i_16__6_n_0
+    SLICE_X4Y6           CARRY4 (Prop_carry4_S[2]_O[2])
+                                                      0.207     7.778 r  decoder7/partial_sum_out_reg[15]_i_6__6/O[2]
+                         net (fo=2, routed)           0.800     8.578    decoder7/partial_sum_out_reg[15]_i_6__6_n_5
+    SLICE_X3Y8           LUT3 (Prop_lut3_I0_O)        0.269     8.847 r  decoder7/partial_sum_out[7]_i_2__6/O
+                         net (fo=2, routed)           0.566     9.413    decoder7/partial_sum_out[7]_i_2__6_n_0
+    SLICE_X3Y8           LUT4 (Prop_lut4_I0_O)        0.268     9.681 r  decoder7/partial_sum_out[7]_i_6__6/O
+                         net (fo=1, routed)           0.000     9.681    decoder7/partial_sum_out[7]_i_6__6_n_0
+    SLICE_X3Y8           CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.332    10.013 r  decoder7/partial_sum_out_reg[7]_i_1__6/CO[3]
+                         net (fo=1, routed)           0.000    10.013    decoder7/partial_sum_out_reg[7]_i_1__6_n_0
+    SLICE_X3Y9           CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.265    10.278 r  decoder7/partial_sum_out_reg[15]_i_1__6/O[1]
+                         net (fo=1, routed)           0.000    10.278    core7/D[9]
+    SLICE_X3Y9           FDRE                                         r  core7/partial_sum_out_reg[9]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 <hidden>
+                            (rising edge-triggered cell RAMB36E1)
+  Destination:            core8/partial_sum_out_reg[8]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        10.272ns  (logic 2.396ns (23.325%)  route 7.876ns (76.675%))
+  Logic Levels:           10  (CARRY4=3 LUT3=1 LUT4=3 LUT6=2 RAMB36E1=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    RAMB36_X0Y2          RAMB36E1                     0.000     0.000 r  <hidden>
+    RAMB36_X0Y2          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_DOBDO[19])
+                                                      0.734     0.734 r  <hidden>
+                         net (fo=33, routed)          2.925     3.659    core9/douta[25]
+    SLICE_X30Y8          LUT6 (Prop_lut6_I3_O)        0.105     3.764 f  core9/partial_sum_out[15]_i_55/O
+                         net (fo=10, routed)          2.024     5.788    decoder8/partial_sum_out[15]_i_12__7_1
+    SLICE_X6Y7           LUT4 (Prop_lut4_I3_O)        0.105     5.893 r  decoder8/partial_sum_out[15]_i_25__6/O
+                         net (fo=2, routed)           0.684     6.577    decoder8/partial_sum_out[15]_i_25__6_n_0
+    SLICE_X6Y6           LUT6 (Prop_lut6_I1_O)        0.105     6.682 r  decoder8/partial_sum_out[15]_i_12__7/O
+                         net (fo=2, routed)           0.715     7.397    decoder8/partial_sum_out[15]_i_12__7_n_0
+    SLICE_X7Y6           LUT4 (Prop_lut4_I0_O)        0.105     7.502 r  decoder8/partial_sum_out[15]_i_16__7/O
+                         net (fo=1, routed)           0.000     7.502    decoder8/partial_sum_out[15]_i_16__7_n_0
+    SLICE_X7Y6           CARRY4 (Prop_carry4_S[2]_O[2])
+                                                      0.207     7.709 r  decoder8/partial_sum_out_reg[15]_i_6__7/O[2]
+                         net (fo=2, routed)           0.947     8.656    decoder8/partial_sum_out_reg[15]_i_6__7_n_5
+    SLICE_X2Y10          LUT3 (Prop_lut3_I0_O)        0.275     8.931 r  decoder8/partial_sum_out[7]_i_2__7/O
+                         net (fo=2, routed)           0.581     9.512    decoder8/partial_sum_out[7]_i_2__7_n_0
+    SLICE_X2Y10          LUT4 (Prop_lut4_I0_O)        0.268     9.780 r  decoder8/partial_sum_out[7]_i_6__7/O
+                         net (fo=1, routed)           0.000     9.780    decoder8/partial_sum_out[7]_i_6__7_n_0
+    SLICE_X2Y10          CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.314    10.094 r  decoder8/partial_sum_out_reg[7]_i_1__7/CO[3]
+                         net (fo=1, routed)           0.000    10.094    decoder8/partial_sum_out_reg[7]_i_1__7_n_0
+    SLICE_X2Y11          CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.178    10.272 r  decoder8/partial_sum_out_reg[15]_i_1__7/O[0]
+                         net (fo=1, routed)           0.000    10.272    core8/D[8]
+    SLICE_X2Y11          FDRE                                         r  core8/partial_sum_out_reg[8]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 <hidden>
+                            (rising edge-triggered cell RAMB36E1)
+  Destination:            core7/partial_sum_out_reg[15]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        10.213ns  (logic 2.430ns (23.793%)  route 7.783ns (76.207%))
+  Logic Levels:           10  (CARRY4=3 LUT3=1 LUT4=3 LUT6=2 RAMB36E1=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    RAMB36_X0Y2          RAMB36E1                     0.000     0.000 r  <hidden>
+    RAMB36_X0Y2          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_DOBDO[19])
+                                                      0.734     0.734 r  <hidden>
+                         net (fo=33, routed)          2.925     3.659    core9/douta[25]
+    SLICE_X30Y8          LUT6 (Prop_lut6_I3_O)        0.105     3.764 f  core9/partial_sum_out[15]_i_55/O
+                         net (fo=10, routed)          2.275     6.039    decoder7/partial_sum_out[15]_i_12__6_1
+    SLICE_X0Y7           LUT4 (Prop_lut4_I3_O)        0.105     6.144 r  decoder7/partial_sum_out[15]_i_25__5/O
+                         net (fo=2, routed)           0.528     6.672    decoder7/partial_sum_out[15]_i_25__5_n_0
+    SLICE_X3Y6           LUT6 (Prop_lut6_I1_O)        0.105     6.777 r  decoder7/partial_sum_out[15]_i_12__6/O
+                         net (fo=2, routed)           0.689     7.466    decoder7/partial_sum_out[15]_i_12__6_n_0
+    SLICE_X4Y6           LUT4 (Prop_lut4_I0_O)        0.105     7.571 r  decoder7/partial_sum_out[15]_i_16__6/O
+                         net (fo=1, routed)           0.000     7.571    decoder7/partial_sum_out[15]_i_16__6_n_0
+    SLICE_X4Y6           CARRY4 (Prop_carry4_S[2]_O[2])
+                                                      0.207     7.778 r  decoder7/partial_sum_out_reg[15]_i_6__6/O[2]
+                         net (fo=2, routed)           0.800     8.578    decoder7/partial_sum_out_reg[15]_i_6__6_n_5
+    SLICE_X3Y8           LUT3 (Prop_lut3_I0_O)        0.269     8.847 r  decoder7/partial_sum_out[7]_i_2__6/O
+                         net (fo=2, routed)           0.566     9.413    decoder7/partial_sum_out[7]_i_2__6_n_0
+    SLICE_X3Y8           LUT4 (Prop_lut4_I0_O)        0.268     9.681 r  decoder7/partial_sum_out[7]_i_6__6/O
+                         net (fo=1, routed)           0.000     9.681    decoder7/partial_sum_out[7]_i_6__6_n_0
+    SLICE_X3Y8           CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.332    10.013 r  decoder7/partial_sum_out_reg[7]_i_1__6/CO[3]
+                         net (fo=1, routed)           0.000    10.013    decoder7/partial_sum_out_reg[7]_i_1__6_n_0
+    SLICE_X3Y9           CARRY4 (Prop_carry4_CI_O[2])
+                                                      0.200    10.213 r  decoder7/partial_sum_out_reg[15]_i_1__6/O[2]
+                         net (fo=1, routed)           0.000    10.213    core7/D[10]
+    SLICE_X3Y9           FDRE                                         r  core7/partial_sum_out_reg[15]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 <hidden>
+                            (rising edge-triggered cell RAMB36E1)
+  Destination:            core7/partial_sum_out_reg[8]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        10.194ns  (logic 2.411ns (23.651%)  route 7.783ns (76.349%))
+  Logic Levels:           10  (CARRY4=3 LUT3=1 LUT4=3 LUT6=2 RAMB36E1=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    RAMB36_X0Y2          RAMB36E1                     0.000     0.000 r  <hidden>
+    RAMB36_X0Y2          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_DOBDO[19])
+                                                      0.734     0.734 r  <hidden>
+                         net (fo=33, routed)          2.925     3.659    core9/douta[25]
+    SLICE_X30Y8          LUT6 (Prop_lut6_I3_O)        0.105     3.764 f  core9/partial_sum_out[15]_i_55/O
+                         net (fo=10, routed)          2.275     6.039    decoder7/partial_sum_out[15]_i_12__6_1
+    SLICE_X0Y7           LUT4 (Prop_lut4_I3_O)        0.105     6.144 r  decoder7/partial_sum_out[15]_i_25__5/O
+                         net (fo=2, routed)           0.528     6.672    decoder7/partial_sum_out[15]_i_25__5_n_0
+    SLICE_X3Y6           LUT6 (Prop_lut6_I1_O)        0.105     6.777 r  decoder7/partial_sum_out[15]_i_12__6/O
+                         net (fo=2, routed)           0.689     7.466    decoder7/partial_sum_out[15]_i_12__6_n_0
+    SLICE_X4Y6           LUT4 (Prop_lut4_I0_O)        0.105     7.571 r  decoder7/partial_sum_out[15]_i_16__6/O
+                         net (fo=1, routed)           0.000     7.571    decoder7/partial_sum_out[15]_i_16__6_n_0
+    SLICE_X4Y6           CARRY4 (Prop_carry4_S[2]_O[2])
+                                                      0.207     7.778 r  decoder7/partial_sum_out_reg[15]_i_6__6/O[2]
+                         net (fo=2, routed)           0.800     8.578    decoder7/partial_sum_out_reg[15]_i_6__6_n_5
+    SLICE_X3Y8           LUT3 (Prop_lut3_I0_O)        0.269     8.847 r  decoder7/partial_sum_out[7]_i_2__6/O
+                         net (fo=2, routed)           0.566     9.413    decoder7/partial_sum_out[7]_i_2__6_n_0
+    SLICE_X3Y8           LUT4 (Prop_lut4_I0_O)        0.268     9.681 r  decoder7/partial_sum_out[7]_i_6__6/O
+                         net (fo=1, routed)           0.000     9.681    decoder7/partial_sum_out[7]_i_6__6_n_0
+    SLICE_X3Y8           CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.332    10.013 r  decoder7/partial_sum_out_reg[7]_i_1__6/CO[3]
+                         net (fo=1, routed)           0.000    10.013    decoder7/partial_sum_out_reg[7]_i_1__6_n_0
+    SLICE_X3Y9           CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.181    10.194 r  decoder7/partial_sum_out_reg[15]_i_1__6/O[0]
+                         net (fo=1, routed)           0.000    10.194    core7/D[8]
+    SLICE_X3Y9           FDRE                                         r  core7/partial_sum_out_reg[8]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 <hidden>
+                            (rising edge-triggered cell RAMB36E1)
+  Destination:            core8/partial_sum_out_reg[7]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        9.991ns  (logic 2.115ns (21.169%)  route 7.876ns (78.831%))
+  Logic Levels:           9  (CARRY4=2 LUT3=1 LUT4=3 LUT6=2 RAMB36E1=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    RAMB36_X0Y2          RAMB36E1                     0.000     0.000 r  <hidden>
+    RAMB36_X0Y2          RAMB36E1 (Prop_ramb36e1_CLKBWRCLK_DOBDO[19])
+                                                      0.734     0.734 r  <hidden>
+                         net (fo=33, routed)          2.925     3.659    core9/douta[25]
+    SLICE_X30Y8          LUT6 (Prop_lut6_I3_O)        0.105     3.764 f  core9/partial_sum_out[15]_i_55/O
+                         net (fo=10, routed)          2.024     5.788    decoder8/partial_sum_out[15]_i_12__7_1
+    SLICE_X6Y7           LUT4 (Prop_lut4_I3_O)        0.105     5.893 r  decoder8/partial_sum_out[15]_i_25__6/O
+                         net (fo=2, routed)           0.684     6.577    decoder8/partial_sum_out[15]_i_25__6_n_0
+    SLICE_X6Y6           LUT6 (Prop_lut6_I1_O)        0.105     6.682 r  decoder8/partial_sum_out[15]_i_12__7/O
+                         net (fo=2, routed)           0.715     7.397    decoder8/partial_sum_out[15]_i_12__7_n_0
+    SLICE_X7Y6           LUT4 (Prop_lut4_I0_O)        0.105     7.502 r  decoder8/partial_sum_out[15]_i_16__7/O
+                         net (fo=1, routed)           0.000     7.502    decoder8/partial_sum_out[15]_i_16__7_n_0
+    SLICE_X7Y6           CARRY4 (Prop_carry4_S[2]_O[2])
+                                                      0.207     7.709 r  decoder8/partial_sum_out_reg[15]_i_6__7/O[2]
+                         net (fo=2, routed)           0.947     8.656    decoder8/partial_sum_out_reg[15]_i_6__7_n_5
+    SLICE_X2Y10          LUT3 (Prop_lut3_I0_O)        0.275     8.931 r  decoder8/partial_sum_out[7]_i_2__7/O
+                         net (fo=2, routed)           0.581     9.512    decoder8/partial_sum_out[7]_i_2__7_n_0
+    SLICE_X2Y10          LUT4 (Prop_lut4_I0_O)        0.268     9.780 r  decoder8/partial_sum_out[7]_i_6__7/O
+                         net (fo=1, routed)           0.000     9.780    decoder8/partial_sum_out[7]_i_6__7_n_0
+    SLICE_X2Y10          CARRY4 (Prop_carry4_S[3]_O[3])
+                                                      0.211     9.991 r  decoder8/partial_sum_out_reg[7]_i_1__7/O[3]
+                         net (fo=1, routed)           0.000     9.991    core8/D[7]
+    SLICE_X2Y10          FDRE                                         r  core8/partial_sum_out_reg[7]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 <hidden>
+                            (rising edge-triggered cell RAMB18E1)
+  Destination:            core3/partial_sum_out_reg[9]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        9.967ns  (logic 3.082ns (30.923%)  route 6.885ns (69.077%))
+  Logic Levels:           12  (CARRY4=4 LUT3=2 LUT4=2 LUT5=2 LUT6=1 RAMB18E1=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    RAMB18_X0Y0          RAMB18E1                     0.000     0.000 r  <hidden>
+    RAMB18_X0Y0          RAMB18E1 (Prop_ramb18e1_CLKBWRCLK_DOBDO[6])
+                                                      0.734     0.734 r  <hidden>
+                         net (fo=30, routed)          2.070     2.804    decoder3/partial_sum_out[15]_i_8__2_0[0]
+    SLICE_X30Y2          LUT6 (Prop_lut6_I3_O)        0.105     2.909 r  decoder3/partial_sum_out[15]_i_46/O
+                         net (fo=1, routed)           0.566     3.475    decoder3/partial_sum_out[15]_i_46_n_0
+    SLICE_X30Y2          LUT5 (Prop_lut5_I0_O)        0.105     3.580 r  decoder3/partial_sum_out[15]_i_26/O
+                         net (fo=12, routed)          1.150     4.731    decoder3/unpacked_weights[3][0]
+    SLICE_X33Y12         LUT5 (Prop_lut5_I4_O)        0.105     4.836 r  decoder3/partial_sum_out[7]_i_28__2/O
+                         net (fo=2, routed)           0.796     5.631    decoder3/partial_sum_out[7]_i_28__2_n_0
+    SLICE_X31Y12         LUT3 (Prop_lut3_I2_O)        0.118     5.749 r  decoder3/partial_sum_out[7]_i_19__1/O
+                         net (fo=2, routed)           0.696     6.445    decoder3/partial_sum_out[7]_i_19__1_n_0
+    SLICE_X31Y12         LUT4 (Prop_lut4_I3_O)        0.268     6.713 r  decoder3/partial_sum_out[7]_i_22__1/O
+                         net (fo=1, routed)           0.000     6.713    decoder3/partial_sum_out[7]_i_22__1_n_0
+    SLICE_X31Y12         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.332     7.045 r  decoder3/partial_sum_out_reg[7]_i_16__2/CO[3]
+                         net (fo=1, routed)           0.000     7.045    decoder3/partial_sum_out_reg[7]_i_16__2_n_0
+    SLICE_X31Y13         CARRY4 (Prop_carry4_CI_O[2])
+                                                      0.200     7.245 r  decoder3/partial_sum_out_reg[15]_i_6__2/O[2]
+                         net (fo=2, routed)           0.933     8.179    decoder3/partial_sum_out_reg[15]_i_6__2_n_5
+    SLICE_X12Y13         LUT3 (Prop_lut3_I0_O)        0.276     8.455 r  decoder3/partial_sum_out[7]_i_2__2/O
+                         net (fo=2, routed)           0.673     9.128    decoder3/partial_sum_out[7]_i_2__2_n_0
+    SLICE_X12Y13         LUT4 (Prop_lut4_I0_O)        0.268     9.396 r  decoder3/partial_sum_out[7]_i_6__2/O
+                         net (fo=1, routed)           0.000     9.396    decoder3/partial_sum_out[7]_i_6__2_n_0
+    SLICE_X12Y13         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.314     9.710 r  decoder3/partial_sum_out_reg[7]_i_1__2/CO[3]
+                         net (fo=1, routed)           0.000     9.710    decoder3/partial_sum_out_reg[7]_i_1__2_n_0
+    SLICE_X12Y14         CARRY4 (Prop_carry4_CI_O[1])
+                                                      0.257     9.967 r  decoder3/partial_sum_out_reg[15]_i_1__2/O[1]
+                         net (fo=1, routed)           0.000     9.967    core3/D[9]
+    SLICE_X12Y14         FDRE                                         r  core3/partial_sum_out_reg[9]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 <hidden>
+                            (rising edge-triggered cell RAMB18E1)
+  Destination:            core3/partial_sum_out_reg[15]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        9.909ns  (logic 3.024ns (30.518%)  route 6.885ns (69.482%))
+  Logic Levels:           12  (CARRY4=4 LUT3=2 LUT4=2 LUT5=2 LUT6=1 RAMB18E1=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    RAMB18_X0Y0          RAMB18E1                     0.000     0.000 r  <hidden>
+    RAMB18_X0Y0          RAMB18E1 (Prop_ramb18e1_CLKBWRCLK_DOBDO[6])
+                                                      0.734     0.734 r  <hidden>
+                         net (fo=30, routed)          2.070     2.804    decoder3/partial_sum_out[15]_i_8__2_0[0]
+    SLICE_X30Y2          LUT6 (Prop_lut6_I3_O)        0.105     2.909 r  decoder3/partial_sum_out[15]_i_46/O
+                         net (fo=1, routed)           0.566     3.475    decoder3/partial_sum_out[15]_i_46_n_0
+    SLICE_X30Y2          LUT5 (Prop_lut5_I0_O)        0.105     3.580 r  decoder3/partial_sum_out[15]_i_26/O
+                         net (fo=12, routed)          1.150     4.731    decoder3/unpacked_weights[3][0]
+    SLICE_X33Y12         LUT5 (Prop_lut5_I4_O)        0.105     4.836 r  decoder3/partial_sum_out[7]_i_28__2/O
+                         net (fo=2, routed)           0.796     5.631    decoder3/partial_sum_out[7]_i_28__2_n_0
+    SLICE_X31Y12         LUT3 (Prop_lut3_I2_O)        0.118     5.749 r  decoder3/partial_sum_out[7]_i_19__1/O
+                         net (fo=2, routed)           0.696     6.445    decoder3/partial_sum_out[7]_i_19__1_n_0
+    SLICE_X31Y12         LUT4 (Prop_lut4_I3_O)        0.268     6.713 r  decoder3/partial_sum_out[7]_i_22__1/O
+                         net (fo=1, routed)           0.000     6.713    decoder3/partial_sum_out[7]_i_22__1_n_0
+    SLICE_X31Y12         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.332     7.045 r  decoder3/partial_sum_out_reg[7]_i_16__2/CO[3]
+                         net (fo=1, routed)           0.000     7.045    decoder3/partial_sum_out_reg[7]_i_16__2_n_0
+    SLICE_X31Y13         CARRY4 (Prop_carry4_CI_O[2])
+                                                      0.200     7.245 r  decoder3/partial_sum_out_reg[15]_i_6__2/O[2]
+                         net (fo=2, routed)           0.933     8.179    decoder3/partial_sum_out_reg[15]_i_6__2_n_5
+    SLICE_X12Y13         LUT3 (Prop_lut3_I0_O)        0.276     8.455 r  decoder3/partial_sum_out[7]_i_2__2/O
+                         net (fo=2, routed)           0.673     9.128    decoder3/partial_sum_out[7]_i_2__2_n_0
+    SLICE_X12Y13         LUT4 (Prop_lut4_I0_O)        0.268     9.396 r  decoder3/partial_sum_out[7]_i_6__2/O
+                         net (fo=1, routed)           0.000     9.396    decoder3/partial_sum_out[7]_i_6__2_n_0
+    SLICE_X12Y13         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.314     9.710 r  decoder3/partial_sum_out_reg[7]_i_1__2/CO[3]
+                         net (fo=1, routed)           0.000     9.710    decoder3/partial_sum_out_reg[7]_i_1__2_n_0
+    SLICE_X12Y14         CARRY4 (Prop_carry4_CI_O[2])
+                                                      0.199     9.909 r  decoder3/partial_sum_out_reg[15]_i_1__2/O[2]
+                         net (fo=1, routed)           0.000     9.909    core3/D[10]
+    SLICE_X12Y14         FDRE                                         r  core3/partial_sum_out_reg[15]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 <hidden>
+                            (rising edge-triggered cell RAMB18E1)
+  Destination:            core3/partial_sum_out_reg[8]/D
+  Path Group:             (none)
+  Path Type:              Max at Slow Process Corner
+  Data Path Delay:        9.888ns  (logic 3.003ns (30.371%)  route 6.885ns (69.629%))
+  Logic Levels:           12  (CARRY4=4 LUT3=2 LUT4=2 LUT5=2 LUT6=1 RAMB18E1=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    RAMB18_X0Y0          RAMB18E1                     0.000     0.000 r  <hidden>
+    RAMB18_X0Y0          RAMB18E1 (Prop_ramb18e1_CLKBWRCLK_DOBDO[6])
+                                                      0.734     0.734 r  <hidden>
+                         net (fo=30, routed)          2.070     2.804    decoder3/partial_sum_out[15]_i_8__2_0[0]
+    SLICE_X30Y2          LUT6 (Prop_lut6_I3_O)        0.105     2.909 r  decoder3/partial_sum_out[15]_i_46/O
+                         net (fo=1, routed)           0.566     3.475    decoder3/partial_sum_out[15]_i_46_n_0
+    SLICE_X30Y2          LUT5 (Prop_lut5_I0_O)        0.105     3.580 r  decoder3/partial_sum_out[15]_i_26/O
+                         net (fo=12, routed)          1.150     4.731    decoder3/unpacked_weights[3][0]
+    SLICE_X33Y12         LUT5 (Prop_lut5_I4_O)        0.105     4.836 r  decoder3/partial_sum_out[7]_i_28__2/O
+                         net (fo=2, routed)           0.796     5.631    decoder3/partial_sum_out[7]_i_28__2_n_0
+    SLICE_X31Y12         LUT3 (Prop_lut3_I2_O)        0.118     5.749 r  decoder3/partial_sum_out[7]_i_19__1/O
+                         net (fo=2, routed)           0.696     6.445    decoder3/partial_sum_out[7]_i_19__1_n_0
+    SLICE_X31Y12         LUT4 (Prop_lut4_I3_O)        0.268     6.713 r  decoder3/partial_sum_out[7]_i_22__1/O
+                         net (fo=1, routed)           0.000     6.713    decoder3/partial_sum_out[7]_i_22__1_n_0
+    SLICE_X31Y12         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.332     7.045 r  decoder3/partial_sum_out_reg[7]_i_16__2/CO[3]
+                         net (fo=1, routed)           0.000     7.045    decoder3/partial_sum_out_reg[7]_i_16__2_n_0
+    SLICE_X31Y13         CARRY4 (Prop_carry4_CI_O[2])
+                                                      0.200     7.245 r  decoder3/partial_sum_out_reg[15]_i_6__2/O[2]
+                         net (fo=2, routed)           0.933     8.179    decoder3/partial_sum_out_reg[15]_i_6__2_n_5
+    SLICE_X12Y13         LUT3 (Prop_lut3_I0_O)        0.276     8.455 r  decoder3/partial_sum_out[7]_i_2__2/O
+                         net (fo=2, routed)           0.673     9.128    decoder3/partial_sum_out[7]_i_2__2_n_0
+    SLICE_X12Y13         LUT4 (Prop_lut4_I0_O)        0.268     9.396 r  decoder3/partial_sum_out[7]_i_6__2/O
+                         net (fo=1, routed)           0.000     9.396    decoder3/partial_sum_out[7]_i_6__2_n_0
+    SLICE_X12Y13         CARRY4 (Prop_carry4_S[3]_CO[3])
+                                                      0.314     9.710 r  decoder3/partial_sum_out_reg[7]_i_1__2/CO[3]
+                         net (fo=1, routed)           0.000     9.710    decoder3/partial_sum_out_reg[7]_i_1__2_n_0
+    SLICE_X12Y14         CARRY4 (Prop_carry4_CI_O[0])
+                                                      0.178     9.888 r  decoder3/partial_sum_out_reg[15]_i_1__2/O[0]
+                         net (fo=1, routed)           0.000     9.888    core3/D[8]
+    SLICE_X12Y14         FDRE                                         r  core3/partial_sum_out_reg[8]/D
+  -------------------------------------------------------------------    -------------------
+
+
+
+
+
+Min Delay Paths
+--------------------------------------------------------------------------------------
+Slack:                    inf
+  Source:                 controller/loop_idx_reg[1]/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            controller/loop_idx_reg[2]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.302ns  (logic 0.186ns (61.543%)  route 0.116ns (38.457%))
+  Logic Levels:           2  (FDCE=1 LUT4=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X4Y31          FDCE                         0.000     0.000 r  controller/loop_idx_reg[1]/C
+    SLICE_X4Y31          FDCE (Prop_fdce_C_Q)         0.141     0.141 r  controller/loop_idx_reg[1]/Q
+                         net (fo=6, routed)           0.116     0.257    controller/loop_idx_reg_n_0_[1]
+    SLICE_X5Y31          LUT4 (Prop_lut4_I2_O)        0.045     0.302 r  controller/loop_idx[2]_i_1/O
+                         net (fo=1, routed)           0.000     0.302    controller/loop_idx[2]_i_1_n_0
+    SLICE_X5Y31          FDCE                                         r  controller/loop_idx_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 controller/loop_idx_reg[1]/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            controller/loop_idx_reg[4]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.303ns  (logic 0.186ns (61.340%)  route 0.117ns (38.660%))
+  Logic Levels:           2  (FDCE=1 LUT6=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X4Y31          FDCE                         0.000     0.000 r  controller/loop_idx_reg[1]/C
+    SLICE_X4Y31          FDCE (Prop_fdce_C_Q)         0.141     0.141 r  controller/loop_idx_reg[1]/Q
+                         net (fo=6, routed)           0.117     0.258    controller/loop_idx_reg_n_0_[1]
+    SLICE_X5Y31          LUT6 (Prop_lut6_I3_O)        0.045     0.303 r  controller/loop_idx[4]_i_1/O
+                         net (fo=1, routed)           0.000     0.303    controller/loop_idx[4]_i_1_n_0
+    SLICE_X5Y31          FDCE                                         r  controller/loop_idx_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 controller/loop_idx_reg[1]/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            controller/loop_idx_reg[3]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.305ns  (logic 0.189ns (61.921%)  route 0.116ns (38.079%))
+  Logic Levels:           2  (FDCE=1 LUT5=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X4Y31          FDCE                         0.000     0.000 r  controller/loop_idx_reg[1]/C
+    SLICE_X4Y31          FDCE (Prop_fdce_C_Q)         0.141     0.141 r  controller/loop_idx_reg[1]/Q
+                         net (fo=6, routed)           0.116     0.257    controller/loop_idx_reg_n_0_[1]
+    SLICE_X5Y31          LUT5 (Prop_lut5_I4_O)        0.048     0.305 r  controller/loop_idx[3]_i_1/O
+                         net (fo=1, routed)           0.000     0.305    controller/loop_idx[3]_i_1_n_0
+    SLICE_X5Y31          FDCE                                         r  controller/loop_idx_reg[3]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 controller/addr_inputs_reg[3]/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            controller/addr_inputs_reg[4]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.332ns  (logic 0.227ns (68.324%)  route 0.105ns (31.676%))
+  Logic Levels:           2  (FDCE=1 LUT6=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X9Y7           FDCE                         0.000     0.000 r  controller/addr_inputs_reg[3]/C
+    SLICE_X9Y7           FDCE (Prop_fdce_C_Q)         0.128     0.128 r  controller/addr_inputs_reg[3]/Q
+                         net (fo=6, routed)           0.105     0.233    controller/addr_inputs_reg[7]_0[3]
+    SLICE_X9Y7           LUT6 (Prop_lut6_I2_O)        0.099     0.332 r  controller/addr_inputs[4]_i_1/O
+                         net (fo=1, routed)           0.000     0.332    controller/addr_inputs[4]_i_1_n_0
+    SLICE_X9Y7           FDCE                                         r  controller/addr_inputs_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 controller/search_idx_reg[2]/C
+                            (rising edge-triggered cell FDRE)
+  Destination:            controller/predicted_class_reg[2]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.342ns  (logic 0.128ns (37.460%)  route 0.214ns (62.540%))
+  Logic Levels:           1  (FDRE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X3Y26          FDRE                         0.000     0.000 r  controller/search_idx_reg[2]/C
+    SLICE_X3Y26          FDRE (Prop_fdre_C_Q)         0.128     0.128 r  controller/search_idx_reg[2]/Q
+                         net (fo=6, routed)           0.214     0.342    controller/search_idx_reg_n_0_[2]
+    SLICE_X2Y27          FDCE                                         r  controller/predicted_class_reg[2]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 controller/loop_idx_reg[6]/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            controller/loop_idx_reg[7]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.349ns  (logic 0.183ns (52.477%)  route 0.166ns (47.523%))
+  Logic Levels:           2  (FDCE=1 LUT4=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X7Y31          FDCE                         0.000     0.000 r  controller/loop_idx_reg[6]/C
+    SLICE_X7Y31          FDCE (Prop_fdce_C_Q)         0.141     0.141 r  controller/loop_idx_reg[6]/Q
+                         net (fo=6, routed)           0.166     0.307    controller/loop_idx_reg_n_0_[6]
+    SLICE_X7Y31          LUT4 (Prop_lut4_I2_O)        0.042     0.349 r  controller/loop_idx[7]_i_2/O
+                         net (fo=1, routed)           0.000     0.349    controller/loop_idx[7]_i_2_n_0
+    SLICE_X7Y31          FDCE                                         r  controller/loop_idx_reg[7]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 controller/loop_idx_reg[6]/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            controller/loop_idx_reg[6]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.352ns  (logic 0.186ns (52.883%)  route 0.166ns (47.117%))
+  Logic Levels:           2  (FDCE=1 LUT3=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X7Y31          FDCE                         0.000     0.000 r  controller/loop_idx_reg[6]/C
+    SLICE_X7Y31          FDCE (Prop_fdce_C_Q)         0.141     0.141 r  controller/loop_idx_reg[6]/Q
+                         net (fo=6, routed)           0.166     0.307    controller/loop_idx_reg_n_0_[6]
+    SLICE_X7Y31          LUT3 (Prop_lut3_I1_O)        0.045     0.352 r  controller/loop_idx[6]_i_1/O
+                         net (fo=1, routed)           0.000     0.352    controller/loop_idx[6]_i_1_n_0
+    SLICE_X7Y31          FDCE                                         r  controller/loop_idx_reg[6]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 controller/loop_idx_reg[4]/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            controller/loop_idx_reg[5]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.353ns  (logic 0.186ns (52.653%)  route 0.167ns (47.347%))
+  Logic Levels:           2  (FDCE=1 LUT6=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X5Y31          FDCE                         0.000     0.000 r  controller/loop_idx_reg[4]/C
+    SLICE_X5Y31          FDCE (Prop_fdce_C_Q)         0.141     0.141 r  controller/loop_idx_reg[4]/Q
+                         net (fo=5, routed)           0.167     0.308    controller/loop_idx_reg_n_0_[4]
+    SLICE_X6Y31          LUT6 (Prop_lut6_I2_O)        0.045     0.353 r  controller/loop_idx[5]_i_1/O
+                         net (fo=1, routed)           0.000     0.353    controller/loop_idx[5]_i_1_n_0
+    SLICE_X6Y31          FDCE                                         r  controller/loop_idx_reg[5]/D
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 controller/addr_weights_reg[0]/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            <hidden>
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.356ns  (logic 0.164ns (46.049%)  route 0.192ns (53.951%))
+  Logic Levels:           1  (FDCE=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X8Y3           FDCE                         0.000     0.000 r  controller/addr_weights_reg[0]/C
+    SLICE_X8Y3           FDCE (Prop_fdce_C_Q)         0.164     0.164 r  controller/addr_weights_reg[0]/Q
+                         net (fo=11, routed)          0.192     0.356    <hidden>
+    RAMB18_X0Y0          RAMB18E1                                     r  <hidden>
+  -------------------------------------------------------------------    -------------------
+
+Slack:                    inf
+  Source:                 controller/addr_weights_reg[3]/C
+                            (rising edge-triggered cell FDCE)
+  Destination:            controller/addr_weights_reg[4]/D
+  Path Group:             (none)
+  Path Type:              Min at Fast Process Corner
+  Data Path Delay:        0.364ns  (logic 0.247ns (67.839%)  route 0.117ns (32.161%))
+  Logic Levels:           2  (FDCE=1 LUT6=1)
+
+    Location             Delay type                Incr(ns)  Path(ns)    Netlist Resource(s)
+  -------------------------------------------------------------------    -------------------
+    SLICE_X8Y3           FDCE                         0.000     0.000 r  controller/addr_weights_reg[3]/C
+    SLICE_X8Y3           FDCE (Prop_fdce_C_Q)         0.148     0.148 r  controller/addr_weights_reg[3]/Q
+                         net (fo=8, routed)           0.117     0.265    controller/Q[3]
+    SLICE_X8Y3           LUT6 (Prop_lut6_I2_O)        0.099     0.364 r  controller/addr_weights[4]_i_1/O
+                         net (fo=1, routed)           0.000     0.364    controller/addr_weights[4]_i_1_n_0
+    SLICE_X8Y3           FDCE                                         r  controller/addr_weights_reg[4]/D
+  -------------------------------------------------------------------    -------------------
+
+
+
+
+

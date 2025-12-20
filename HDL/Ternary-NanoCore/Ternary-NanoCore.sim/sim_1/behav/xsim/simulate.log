@@ -11,19 +11,19 @@ Starting Simulation...
 Pressing Start Button...
 
 --- INTERNAL NEURON SCORES ---
-Neuron 0 Final Score:        -633
-Neuron 1 Final Score:       -6652
-Neuron 2 Final Score:        -721
-Neuron 3 Final Score:        1783
-Neuron 4 Final Score:       -1824
-Neuron 5 Final Score:         454
-Neuron 6 Final Score:       -5360
-Neuron 7 Final Score:        6325
-Neuron 8 Final Score:        -580
-Neuron 9 Final Score:         -28
+Neuron 0 Final Score:           1
+Neuron 1 Final Score:       -5099
+Neuron 2 Final Score:         367
+Neuron 3 Final Score:        5517
+Neuron 4 Final Score:        -844
+Neuron 5 Final Score:         998
+Neuron 6 Final Score:       -4079
+Neuron 7 Final Score:        6839
+Neuron 8 Final Score:        2686
+Neuron 9 Final Score:         379
 ------------------------------
 
 Inference Completed.
 Final Prediction (LED Output):  7
 -----------------------------------------
-$finish called at time : 1865 ns : File "C:/Users/zahid/Desktop/Projects/Ternary/Ternary-NanoCore/Ternary-NanoCore/HDL/Ternary-NanoCore/Ternary-NanoCore.srcs/sim_1/new/tb_ternary_nanocore.v" Line 71
+$finish called at time : 1002500 ps : File "C:/Users/zahid/Desktop/Projects/Ternary/Ternary-NanoCore/Ternary-NanoCore/HDL/Ternary-NanoCore/Ternary-NanoCore.srcs/sim_1/new/tb_ternary_nanocore.v" Line 78
