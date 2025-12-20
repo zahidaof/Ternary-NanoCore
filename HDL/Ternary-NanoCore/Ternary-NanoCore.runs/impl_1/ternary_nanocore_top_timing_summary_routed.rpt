@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.1 (win64) Build 6140274 Thu May 22 00:12:29 MDT 2025
-| Date         : Sat Dec 20 16:48:05 2025
+| Date         : Sat Dec 20 16:58:57 2025
 | Host         : thePC running 64-bit major release  (build 9200)
 | Command      : report_timing_summary -max_paths 10 -routable_nets -report_unconstrained -file ternary_nanocore_top_timing_summary_routed.rpt -pb ternary_nanocore_top_timing_summary_routed.pb -rpx ternary_nanocore_top_timing_summary_routed.rpx -warn_on_violation
 | Design       : ternary_nanocore_top

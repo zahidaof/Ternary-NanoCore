@@ -3,8 +3,8 @@
 # SW Build 6140274 on Thu May 22 00:12:29 MDT 2025
 # IP Build 6138677 on Thu May 22 03:10:11 MDT 2025
 # SharedData Build 6139179 on Tue May 20 17:58:58 MDT 2025
-# Start of session at: Sat Dec 20 15:44:44 2025
-# Process ID         : 19108
+# Start of session at: Sat Dec 20 16:56:50 2025
+# Process ID         : 17328
 # Current directory  : C:/Users/zahid/Desktop/Projects/Ternary/Ternary-NanoCore/Ternary-NanoCore/HDL/Ternary-NanoCore/Ternary-NanoCore.runs/RAM_Input_synth_1
 # Command line       : vivado.exe -log RAM_Input.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source RAM_Input.tcl
 # Log file           : C:/Users/zahid/Desktop/Projects/Ternary/Ternary-NanoCore/Ternary-NanoCore/HDL/Ternary-NanoCore/Ternary-NanoCore.runs/RAM_Input_synth_1/RAM_Input.vds
@@ -19,6 +19,6 @@
 # Host memory        : 34198 MB
 # Swap memory        : 2147 MB
 # Total Virtual      : 36345 MB
-# Available Virtual  : 24249 MB
+# Available Virtual  : 17332 MB
 #-----------------------------------------------------------
 source RAM_Input.tcl -notrace

@@ -60,7 +60,10 @@ x_train = (x_train / 255.0 * 254 - 127).astype(np.int8)
 x_test  = (x_test  / 255.0 * 254 - 127).astype(np.int8)
 
 # Save original image for verification (Using Image #2, which is a '1')
-TEST_IMG_IDX = 0 
+#===========================================
+TEST_IMG_IDX = 2 #change this to export a different test image
+#===========================================
+
 original_test_image = x_test[TEST_IMG_IDX] 
 
 # Flatten images (28x28 -> 784)
